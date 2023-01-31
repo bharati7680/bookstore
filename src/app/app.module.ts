@@ -5,19 +5,25 @@ import { BestsellersService} from './service/bestsellers.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { BooklistComponent } from './booklist/booklist.component';
+import { BooklistComponent } from './book/booklist/booklist.component';
+import { SharedModule } from './shared/shared.module';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    BooklistComponent
+    BooklistComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    FormsModule
 
   ],
   providers: [BestsellersService],

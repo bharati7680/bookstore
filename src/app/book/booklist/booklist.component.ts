@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {BestsellersService} from '../service/bestsellers.service'
+import {BestsellersService} from '../../service/bestsellers.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-booklist',
   templateUrl: './booklist.component.html',
@@ -11,7 +12,7 @@ export class BooklistComponent {
   //Data Display
   bookList: any = []
   totalBooks: number = 0
-  constructor(private bookService: BestsellersService) { }
+  constructor(private bookService: BestsellersService, private router: Router) { }
 
   ngOnInit(): void {
     //this.getMethod();
@@ -25,7 +26,10 @@ export class BooklistComponent {
       }
     })
   }
-
+  clickBook(book:any) {
+    console.log(book.isbn_13)
+    this.router.navigateByUrl('book/' +book.isbn_13);
+  }
 
   // public getMethod() {
   //   this.http.get("http://35.174.167.227:3000/api/book").subscribe();

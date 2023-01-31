@@ -9,16 +9,18 @@ export class BestsellersService {
 
   constructor(private httpService:HttpClient) { }
 
-
-  //booksapiurl
-
-  booksapiurl = `${environment.API_URL}api/book`;
   
-  //booklist()
+  //booklist
 
   booklist():Observable<any>
   {
-    return this.httpService.get(this.booksapiurl);
+    return this.httpService.get(`${environment.API_URL}api/book`);
   }
+
+  //bookdetails
+  bookDetail(isbn_13:any):Observable<any> {
+    return this.httpService.get(`${environment.API_URL}api/book/detail/${isbn_13}`)
+  }
+  
 
 }

@@ -1,9 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BooklistComponent } from './booklist/booklist.component';
 
 const routes: Routes = [
-  {path: '',component:BooklistComponent} //home
+  {
+    path: '',
+    loadChildren: () => import('./book/book.module').then(m => m.BookModule)
+  },
+
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+
+  {
+    path: 'my-orders',
+    loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+  }
 ];
 
 @NgModule({
