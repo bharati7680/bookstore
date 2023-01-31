@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { BestsellersService } from 'src/app/service/bestsellers.service';
 import { OrderService } from 'src/app/service/order.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-book-details',
@@ -47,7 +48,8 @@ export class BookDetailsComponent {
       books: [{
           bookId: this.bookDetails.id, 
           quantity: 1
-      }]
+      }],
+      callbackUrl: environment.CALLBACK_URL       // redirect to myorders page after payment is done
     }
 
     this.orderService.initOrder(data).subscribe((result:any) => {
