@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class BookDetailsComponent {
 
   bookDetails:any = null
-  constructor (private route: ActivatedRoute,// URL
+  constructor (private route: ActivatedRoute, //  URL
     private router: Router,
     private bookService: BestsellersService, 
     private authService: AuthService,
@@ -49,7 +49,7 @@ export class BookDetailsComponent {
           bookId: this.bookDetails.id, 
           quantity: 1
       }],
-      callbackUrl: environment.CALLBACK_URL       // redirect to myorders page after payment is done
+      callbackUrl: environment.CALLBACK_URL       //redirect to myorders page after payment is done
     }
 
     this.orderService.initOrder(data).subscribe((result:any) => {
