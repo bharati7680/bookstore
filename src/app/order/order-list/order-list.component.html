@@ -1,0 +1,12 @@
+<div>
+    <div *ngFor="let order of orders">
+        <img src="{{order.bookDetails[0].img_url}}" width="80px" alt="">
+        Status: {{order.status}} 
+        Name: {{order.bookDetails[0].name}}
+
+        <hr>
+    </div>
+
+
+
+</div>
