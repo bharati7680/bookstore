@@ -23,7 +23,7 @@ export class BookDetailsComponent {
 
   ngOnInit(): void {
     console.log("IsUserLogin"+this.authService.isUserLogin())
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params:any) => {
       console.log(params.get('isbn13'))
       this.bookDetail(params.get('isbn13'))  
     });
@@ -34,7 +34,7 @@ export class BookDetailsComponent {
          console.log(result)
 
          if(!result.error){
-          this.bookDetails= result.data.book[0]
+          this.bookDetails= result.data.book
          }
     })
   }

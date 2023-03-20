@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    API_URL: "http://54.175.73.149:3000/",
-    CALLBACK_URL: "http://54.175.73.149:3002/my-orders"
+    API_URL: "http://localhost:3000/",
+    CALLBACK_URL: "http://localhost:3000/my-orders"
 }
